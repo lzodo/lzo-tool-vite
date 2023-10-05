@@ -1,1 +1,0 @@
-import{r as n,e as r,o as a,c,b as o}from"./index-cfd5ff4d.js";import"./lodash-2ab22c0b.js";const u={__name:"domRef",setup(s){const e=n(),t=()=>{console.log(e.value)};return r(()=>{console.log(e.value,3)}),(l,f)=>(a(),c("div",null,[o("div",{ref_key:"domRef",ref:e},"通过ref得到dom元素",512),o("button",{onClick:t},"按钮")]))}};export{u as default};
