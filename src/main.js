@@ -12,6 +12,7 @@ import "./assets/css/global.css";
 import { createApp } from "vue";
 import App from "./vue/App.vue";
 import router from "./vue/router/index";
+import pinia from "./vue/pinia/index";
 
 import { isBrowser, sleep, randomRange } from "lzo-js-tools";
 console.log(isBrowser());
@@ -30,4 +31,7 @@ console.log(_.join([123, 456]));
 // a.innerText = "创建dom";
 // document.body.append(a);
 
-let app = createApp(App).use(router).mount(document.querySelector("#app"));
+let app = createApp(App)
+  .use(pinia)
+  .use(router)
+  .mount(document.querySelector("#app"));

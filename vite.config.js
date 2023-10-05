@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
@@ -6,6 +7,16 @@ import viteCompression from "vite-plugin-compression";
 // defineConfig 语法智能提示
 export default defineConfig({
   base: "./",
+  server: {
+    host: "0.0.0.0",
+    proxy: {
+      "/testApi": {
+        target: "http://192.168.203.132:8778",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/testApi/, ""),
+      },
+    },
+  },
   plugins: [
     vue(),
     AutoImport({
@@ -30,6 +41,11 @@ export default defineConfig({
           lodash: ["lodash-es"],
         },
       },
+    },
+  },
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src/vue", import.meta.url)),
     },
   },
 });

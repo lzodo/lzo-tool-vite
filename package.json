@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx vite",
-    "build": "npx vite build",
+    "dev": "npx vite --mode development",
+    "build": "npx vite build --mode production",
     "preview": "npx vite preview"
   },
   "keywords": [],
@@ -21,8 +21,12 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^4.3.4",
+    "axios": "^1.5.1",
     "lodash-es": "^4.17.21",
     "lzo-js-tools": "1.1.7",
+    "pinia": "^2.1.6",
+    "pinia-plugin-persistedstate": "^3.2.0",
+    "qs": "^6.11.2",
     "unplugin-auto-import": "^0.16.6",
     "vue": "^3.3.4",
     "vue-router": "4"
